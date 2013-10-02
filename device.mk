@@ -19,6 +19,9 @@ PRODUCT_PACKAGES := \
     rild \
     BasicSmsReceiver
 
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.carrier=unknown
+
 PRODUCT_COPY_FILES := \
     device/asus/deb/fstab.deb:root/fstab.flo \
     device/asus/deb/init.deb.rc:root/init.flo.rc
@@ -46,5 +49,7 @@ $(call inherit-product, device/asus/flo/device-common.mk)
 
 # inherit from the non-open-source side, if present
 $(call inherit-product-if-exists, vendor/asus/deb/device-vendor.mk)
+
+$(call inherit-product-if-exists, jcrom/asus/deb/device-deb.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/asus/deb/overlay

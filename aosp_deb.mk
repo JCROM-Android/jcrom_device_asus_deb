@@ -20,12 +20,18 @@
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/asus/deb/device.mk)
 
+#JCROM
+$(call inherit-product-if-exists, jcrom/asus/deb/device-common.mk)
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_NAME := aosp_deb
 PRODUCT_DEVICE := deb
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on Deb
-PRODUCT_MANUFACTURER := ASUS
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 7
+PRODUCT_MANUFACTURER := asus
 PRODUCT_RESTRICT_VENDOR_FILES := true
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razorg BUILD_FINGERPRINT=google/razorg/deb:4.3/JLS36C/779326:user/release-keys PRIVATE_BUILD_DESC="razorg-user 4.3 JLS36C 779326 release-keys"
+

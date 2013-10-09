@@ -34,9 +34,9 @@ install_blobs() {
     done
 }
 
-MAGURO_BLOBS="asus-deb-JLS36C-1171926b.tgz
-              broadcom-deb-JLS36C-44ac0b36.tgz
-              qcom-deb-JLS36C-a2125c51.tgz"
+MAGURO_BLOBS="asus-deb-JLS36I-56a1ef30.tgz
+              broadcom-deb-JLS36I-c31a06f7.tgz
+              qcom-deb-JLS36I-13308194.tgz"
 
 CSUM_LIST="$PWD/blob-shasums"
 
